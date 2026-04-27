@@ -15,8 +15,8 @@ mkdir -p "$DESKTOP_DIR"
 # right: tray/clock/sound/etc
 gsettings set org.cinnamon enabled-applets "[
 'panel1:left:0:weather@mockturtl:0',
-'panel1:left:1:menu@cinnamon.org:1',
-'panel1:center:0:grouped-window-list@cinnamon.org:2',
+'panel1:center:0:menu@cinnamon.org:1',
+'panel1:center:1:grouped-window-list@cinnamon.org:2',
 'panel1:right:0:systray@cinnamon.org:3',
 'panel1:right:1:xapp-status@cinnamon.org:4',
 'panel1:right:2:notifications@cinnamon.org:5',
