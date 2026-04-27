@@ -36,12 +36,12 @@ cd "$TMP_DIR"
 wget -O fluent-icons.tar.gz https://github.com/luisrguerra/fluent11-icon-theme/archive/refs/tags/0.6.tar.gz
 tar -xzf fluent-icons.tar.gz
 
-cp -r fluent11-icon-theme-* "$HOME/.icons/"
+cp -r fluent11-icon-theme-*/fluent11 "$HOME/.icons/"
 
 cd ~
 rm -rf "$TMP_DIR"
 
-gsettings set org.cinnamon.desktop.interface icon-theme 'Fluent11'
+gsettings set org.cinnamon.desktop.interface icon-theme 'fluent11'
 
 # Theme
 THEME="Windows-10"
@@ -64,7 +64,11 @@ gsettings set org.cinnamon.theme name "Windows-10"
 gsettings set org.cinnamon.desktop.wm.preferences theme "Windows-10"
 gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Grey'
 
+# Cursor
+gsettings set org.cinnamon.desktop.interface cursor-theme 'DMZ-White'
+
 # dconf settings
 if [ -f "./user" ]; then
   dconf load / < ./user
 fi
+
