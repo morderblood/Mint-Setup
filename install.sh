@@ -4,16 +4,15 @@ set -e
 # System
 sudo apt update
 sudo apt upgrade -y
-
-sudo apt update --fix-missing
-sudo apt upgrade -y
+sudo apt autoremove -y
+sudo apt update
 
 # Flatpak / Flathub
-sudo apt install -y flatpak wget git
+sudo apt install -y --fix-missing flatpak wget git
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install programs
-sudo apt install -y firefox vlc gimp git clamtk
+sudo apt install -y --fix-missing firefox vlc gimp git clamtk
 flatpak install -y flathub \
   org.telegram.desktop \
   com.anydesk.Anydesk \
