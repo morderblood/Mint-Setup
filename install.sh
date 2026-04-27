@@ -14,7 +14,8 @@ sudo apt install -y firefox vlc gimp git clamtk
 flatpak install -y flathub \
   org.telegram.desktop \
   com.anydesk.Anydesk \
-  com.rustdesk.RustDesk
+  com.rustdesk.RustDesk \
+  org.onlyoffice.desktopeditors
 
 # Language
 sudo apt install -y language-pack-ru language-pack-gnome-ru
