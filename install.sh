@@ -14,17 +14,14 @@ gsettings set org.cinnamon.desktop.wm.keybindings switch-input-source "['<Alt>Sh
 # wallpaper
 tar -xzf 'Windows-10.tar.gz' -C /home/iork/.themes/
 
-gsettings set org.cinnamon.desktop.interface 'Windows-10'
 
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Grey'
+
+cp -r fluent11 /home/iork/.icons/
+
+
+gsettings set org.cinnamon.desktop.interface icon-theme 'fluent11'
+gsettings set org.cinnamon.desktop.wm.preferences theme "Windows-10"
 # user config
 cp user /home/iork/.config/dconf/
 
-URL="https://github.com/luisrguerra/fluent11-icon-theme/archive/refs/tags/0.6.tar.gz"
-
-mkdir -p ~/.icons
-
-wget -O /tmp/fluent.tar.gz "$URL" &&
-tar -xzf /tmp/fluent.tar.gz -C ~/.icons --strip-components=1 &&
-rm /tmp/fluent.tar.gz
-
-gsettings set org.cinnamon.desktop.interface icon-theme "fluent11"
