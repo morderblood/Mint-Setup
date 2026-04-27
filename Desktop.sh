@@ -153,6 +153,18 @@ gsettings set org.nemo.desktop trash-icon-visible true
 gsettings set org.nemo.desktop home-icon-visible false
 gsettings set org.nemo.desktop computer-icon-visible false
 
+gsettings set org.cinnamon.desktop.background picture-uri "file://$(pwd)/wallpaper.jpg"
+gsettings set org.cinnamon.desktop.background picture-options 'zoom'
+
+sudo mkdir -p /var/lib/AccountsService/icons
+
+sudo cp user.png /var/lib/AccountsService/icons/$USER
+sudo bash -c "cat > /var/lib/AccountsService/users/$USER" <<EOF
+[User]
+Icon=/var/lib/AccountsService/icons/$USER
+EOF
+sudo systemctl restart accounts-daemon
+
 # Restart Cinnamon
 nohup cinnamon --replace >/dev/null 2>&1 &
 
