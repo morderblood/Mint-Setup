@@ -5,6 +5,9 @@ set -e
 sudo apt update
 sudo apt upgrade -y
 
+sudo apt update --fix-missing
+sudo apt upgrade -y
+
 # Flatpak / Flathub
 sudo apt install -y flatpak wget git
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
