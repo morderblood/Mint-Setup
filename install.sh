@@ -1,27 +1,26 @@
+#!/bin/bash
+
 # System
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y firefox gzip gunzip vlc clamtk gimp git
+sudo apt install -y firefox vlc gimp git clamtk
 
 # Language
 sudo apt install -y language-pack-ru language-pack-gnome-ru
 sudo locale-gen ru_RU.UTF-8
 sudo update-locale LANG=ru_RU.UTF-8
-setxkbmap -layout "de,ru" -option "grp:alt_shift_toggle" 
-gsettings set org.cinnamon.desktop.input-sources sources "[('xkb', 'de'), ('xkb', 'de')]"
+export LANG=ru_RU.UTF-8
+
+# Keyboard
+gsettings set org.cinnamon.desktop.input-sources sources "[('xkb', 'de'), ('xkb', 'ru')]"
 gsettings set org.cinnamon.desktop.wm.keybindings switch-input-source "['<Alt>Shift_L']"
-# gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggle']"
 
-# wallpaper
-tar -xzf 'Windows-10.tar.gz' -C /home/iork/.themes/
-
+# Themes (global)
+sudo cp -r fluent11 /usr/share/icons/
+sudo cp -r Windows-10 /usr/share/themes/
 
 gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Grey'
-
-cp -r fluent11 /home/iork/.icons/
-
-
 gsettings set org.cinnamon.desktop.interface icon-theme 'fluent11'
 gsettings set org.cinnamon.desktop.wm.preferences theme "Windows-10"
-# user config
-cp user /home/iork/.config/dconf/
 
+# dconf settings
+dconf load / < user
