@@ -153,7 +153,20 @@ gsettings set org.nemo.desktop trash-icon-visible true
 gsettings set org.nemo.desktop home-icon-visible false
 gsettings set org.nemo.desktop computer-icon-visible false
 
-gsettings set org.cinnamon.desktop.background picture-uri "file://$(pwd)/wallpaper.jpg"
+# Set wallpaper
+WALL1="$(pwd)/wallpaper.jpg"
+WALL2="/usr/share/backgrounds/linuxmint-wallpapers/porioni_dark.jpg"
+
+if [ -f "$WALL1" ]; then
+  WALL="$WALL1"
+elif [ -f "$WALL2" ]; then
+  WALL="$WALL2"
+else
+  echo "No wallpaper found"
+  exit 1
+fi
+
+gsettings set org.cinnamon.desktop.background picture-uri "file://$WALL"
 gsettings set org.cinnamon.desktop.background picture-options 'zoom'
 
 sudo mkdir -p /var/lib/AccountsService/icons
@@ -167,5 +180,6 @@ sudo systemctl restart accounts-daemon
 
 # Restart Cinnamon
 nohup cinnamon --replace >/dev/null 2>&1 &
+
 
 echo "Desktop look applied. Лучше перелогиниться."
