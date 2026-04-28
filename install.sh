@@ -72,3 +72,6 @@ if [ -f "./user" ]; then
   dconf load / < ./user
 fi
 
+bash desktop.sh
+bash wallpaper.sh
+bash avatar.sh
