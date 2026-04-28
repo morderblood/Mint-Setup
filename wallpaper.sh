@@ -14,11 +14,3 @@ fi
 gsettings set org.cinnamon.desktop.background picture-uri "file://$WALL"
 gsettings set org.cinnamon.desktop.background picture-options 'zoom'
 
-sudo mkdir -p /var/lib/AccountsService/icons
-
-sudo cp user.png /var/lib/AccountsService/icons/$USER
-sudo bash -c "cat > /var/lib/AccountsService/users/$USER" <<EOF
-[User]
-Icon=/var/lib/AccountsService/icons/$USER
-EOF
-sudo systemctl restart accounts-daemon
