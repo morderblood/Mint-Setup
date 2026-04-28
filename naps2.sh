@@ -7,14 +7,3 @@ echo "deb [signed-by=/etc/apt/keyrings/naps2.gpg] https://downloads.naps2.com ./
 # Install NAPS2
 sudo apt update
 sudo apt install naps2
-
-DESKTOP_DIR=$(xdg-user-dir DESKTOP)
-
-cat > "$DESKTOP_DIR/Naps2.desktop" <<'EOF'
-[Desktop Entry]
-Type=Application
-Name=NAPS2
-Exec=naps2
-Icon=com.naps2.Naps2
-Terminal=false
-EOF
