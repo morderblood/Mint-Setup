@@ -13,8 +13,8 @@ DESKTOP_DIR=$(xdg-user-dir DESKTOP)
 cat > "$DESKTOP_DIR/Naps2.desktop" <<'EOF'
 [Desktop Entry]
 Type=Application
-Name=Naps2
+Name=NAPS2
 Exec=naps2
-Icon=naps2
+Icon=com.naps2.Naps2
 Terminal=false
 EOF
