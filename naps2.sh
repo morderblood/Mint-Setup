@@ -7,3 +7,12 @@ echo "deb [signed-by=/etc/apt/keyrings/naps2.gpg] https://downloads.naps2.com ./
 # Install NAPS2
 sudo apt update
 sudo apt install naps2
+
+cat > "$DESKTOP_DIR/Firefox.desktop" <<'EOF'
+[Desktop Entry]
+Type=Application
+Name=Naps2
+Exec=naps2
+Icon=naps2
+Terminal=false
+EOF
