@@ -102,7 +102,7 @@ EOF
 cat > "$DESKTOP_DIR/LibreOffice Writer.desktop" <<'EOF'
 [Desktop Entry]
 Type=Application
-Name=LibreOffice Writer
+Name=Word
 Exec=libreoffice --writer
 Icon=libreoffice-writer
 Terminal=false
@@ -111,7 +111,7 @@ EOF
 cat > "$DESKTOP_DIR/LibreOffice Calc.desktop" <<'EOF'
 [Desktop Entry]
 Type=Application
-Name=LibreOffice Calc
+Name=Excel
 Exec=libreoffice --calc
 Icon=libreoffice-calc
 Terminal=false
@@ -120,7 +120,7 @@ EOF
 cat > "$DESKTOP_DIR/LibreOffice Impress.desktop" <<'EOF'
 [Desktop Entry]
 Type=Application
-Name=LibreOffice Impress
+Name=PowerPoint
 Exec=libreoffice --impress
 Icon=libreoffice-impress
 Terminal=false
